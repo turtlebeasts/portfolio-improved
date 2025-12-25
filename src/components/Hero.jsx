@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaXTwitter,
+  FaFacebookF,
+} from "react-icons/fa6";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center px-6"
+      className="relative flex min-h-screen items-center justify-center px-6 overflow-hidden"
     >
       <div className="mx-auto max-w-4xl text-center md:text-left">
         {/* Badge */}
@@ -14,7 +20,7 @@ export default function Hero() {
           transition={{ delay: 0.1 }}
           className="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-xs font-medium tracking-wide text-cyan-300"
         >
-          WELCOME TO MY WORLD ✨
+          মৃগাংক
         </motion.span>
 
         {/* Heading */}
@@ -55,13 +61,20 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           className="mt-10 flex flex-wrap items-center gap-4 justify-center md:justify-start"
         >
-          <button className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-black shadow-[0_0_25px_rgba(34,211,238,0.5)] transition hover:bg-cyan-300">
+          <a
+            href="#projects"
+            className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-black shadow-[0_0_25px_rgba(34,211,238,0.5)] transition hover:bg-cyan-300"
+          >
             My Projects
-          </button>
+          </a>
 
-          <button className="rounded-full border border-cyan-400/40 px-6 py-3 text-sm font-medium text-cyan-300 transition hover:bg-cyan-400/10">
+          <a
+            download
+            href="/Mriganka Resume.pdf"
+            className="rounded-full border border-cyan-400/40 px-6 py-3 text-sm font-medium text-cyan-300 transition hover:bg-cyan-400/10"
+          >
             Download CV
-          </button>
+          </a>
         </motion.div>
 
         {/* Social Icons */}
@@ -71,19 +84,35 @@ export default function Hero() {
           transition={{ delay: 0.6 }}
           className="mt-12 flex gap-4 justify-center md:justify-start"
         >
-          {["in", "gh", "x", "fb"].map((icon) => (
-            <button
-              key={icon}
+          {[
+            {
+              icon: FaLinkedinIn,
+              href: "https://www.linkedin.com/in/mriganka-das-05385822a/",
+            },
+            { icon: FaGithub, href: "https://github.com/turtlebeasts" },
+            { icon: FaXTwitter, href: "https://x.com/Mrigank46920769" },
+            {
+              icon: FaFacebookF,
+              href: "https://www.facebook.com/mriganka.das.568089/",
+            },
+          ].map(({ icon: Icon, href }, index) => (
+            <motion.a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 text-cyan-300 transition hover:bg-cyan-400/20 hover:text-white"
             >
-              {icon.toUpperCase()}
-            </button>
+              <Icon size={16} />
+            </motion.a>
           ))}
         </motion.div>
       </div>
 
       {/* Glow blob */}
-      <div className="pointer-events-none absolute -z-10 h-100 w-100 rounded-full bg-cyan-400/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -z-10 h-75 w-75 rounded-full bg-cyan-400/20 blur-[120px]" />
     </section>
   );
 }
