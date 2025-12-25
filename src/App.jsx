@@ -11,7 +11,7 @@ import Contact from "./components/Contact";
 export default function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <MobileNavbar />
       <Hero />
       <About />

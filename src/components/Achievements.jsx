@@ -48,7 +48,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="relative px-6 py-28">
+    <section id="achievements" className="relative px-6 py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <motion.h2
@@ -66,9 +66,9 @@ export default function Achievements() {
           cybersecurity, and open-source contributions.
         </p>
 
-        {/* Achievements Rail */}
+        {/* Achievements Grid */}
         <div className="mt-20 grid gap-10 md:grid-cols-2">
-          {achievements.map((item, index) => (
+          {achievements.map((item) => (
             <motion.article
               key={item.title}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -98,15 +98,15 @@ export default function Achievements() {
                 </p>
               </div>
 
-              {/* Glow Accent */}
-              <div className="pointer-events-none absolute -bottom-24 -right-24 h-40 w-40 rounded-full bg-cyan-400/25 blur-[100px] opacity-0 transition group-hover:opacity-100" />
+              {/* Card Glow */}
+              <div className="pointer-events-none absolute -bottom-20 -right-20 h-32 w-32 rounded-full bg-cyan-400/25 blur-[80px] opacity-0 transition group-hover:opacity-100" />
             </motion.article>
           ))}
         </div>
       </div>
 
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-112.5 w-112.5 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[160px]" />
+      {/* Background Glow (SAFE SIZE) */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-70 w-70 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[140px]" />
     </section>
   );
 }
