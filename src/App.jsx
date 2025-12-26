@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Certifications from "./components/Certifications";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
+import FlagshipProjects from "./components/FlagshipProjects";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Hero />
       <About />
       <Projects />
+      <FlagshipProjects />
       <Skills />
       <Certifications />
       <Achievements />
