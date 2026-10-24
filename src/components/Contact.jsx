@@ -75,7 +75,7 @@ export default function Contact() {
                 📍 <span className="text-white">India</span>
               </p>
               <p className="text-gray-300">
-                📧 <span className="text-white">mriganka@gmail.com</span>
+                📧 <span className="text-white">mrigz179@gmail.com</span>
               </p>
             </div>
 
