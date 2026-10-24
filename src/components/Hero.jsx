@@ -4,6 +4,7 @@ import {
   FaGithub,
   FaXTwitter,
   FaFacebookF,
+  SiLeetcode,
 } from "react-icons/fa6";
 
 export default function Hero() {
@@ -94,6 +95,10 @@ export default function Hero() {
             {
               icon: FaFacebookF,
               href: "https://www.facebook.com/mriganka.das.568089/",
+            },
+            {
+              icons: SiLeetcode,
+              href: "https://leetcode.com/u/mrigz179/",
             },
           ].map(({ icon: Icon, href }, index) => (
             <motion.a
